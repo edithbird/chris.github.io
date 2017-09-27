@@ -2,4 +2,4 @@
 title: "Chris' Website"
 ---
 
-Hello, World!
+This is the index page. 
