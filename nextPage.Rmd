@@ -2,4 +2,4 @@
 title: "Next Page"
 ---
 
-This is the next page. 
+This is the next page. The next page follows the previous page. 
