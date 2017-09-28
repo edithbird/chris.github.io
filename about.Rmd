@@ -3,3 +3,5 @@ title: "About Me"
 ---
 
 This is the about page. 
+
+![](FullSizeRender (2).jpeg)
