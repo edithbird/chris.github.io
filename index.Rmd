@@ -4,5 +4,5 @@ title: "Chris' Website"
 
 This is the index page. You can also call it the home page. I think you'll feel right at home. 
 
-Here is me 
+
 

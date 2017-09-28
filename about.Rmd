@@ -6,4 +6,4 @@ This is the about page.
 
 Here is me. 
 
-![](FullSizeRender (2).jpeg)
+![](Chris.jpeg)
