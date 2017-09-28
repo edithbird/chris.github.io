@@ -6,4 +6,4 @@ This is the about page.
 
 Here is me. 
 
-![](chris.github.io/Chris.jpeg)
+![](Chris.jpg)
