@@ -21,7 +21,7 @@ navbar:
 output:
   html_document:
     theme: united
-    highlight: haddock
+    highlight: pygments
     css: style.css
     fig_width: 6
     fig_height: 4
