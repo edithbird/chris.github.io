@@ -68,6 +68,8 @@ REGISTERED NURSE | MERCY HOSPITAL, PORTLAND, ME | 9/1998-7/2005
 
 ###Class Projects
 
+[See Projects]()
+
 | [![Religion](Brain.png)](https://rpubs.com/chrisiyer/220669)  | [![Euphoria](Terrorism.png)](https://public.tableau.com/profile/christine.iyer#!/vizhome/FinalAsssignment4/Howscaredshouldwebe) | [![Rapture](Inv.png)](https://rpubs.com/chrisiyer/Final) | [![Euphoria](WG.png)](https://rpubs.com/chrisiyer/sp_500)|
 |:---:|:---:|:---:|:---:|
 | Cancer | Terror | Forecasting | Stock Market |
