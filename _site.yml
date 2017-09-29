@@ -2,6 +2,7 @@ name: "chris-website"
 output_dir: "."
 navbar:
   title: "Chris' Website"
+  type: inverse
   left:
     - text: "House"
       href: index.html
@@ -20,5 +21,7 @@ output:
     theme: cosmo
     highlight: textmate
     css: style.css
+    fig_width: 6
+    fig_height: 4
       
      

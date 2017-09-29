@@ -6,5 +6,5 @@ This is the index page. You can also call it the home page. I think you'll feel 
 
 
 
-```{r, fig 1, fig.height=12, fig.width=6, child="_sessioninfo.Rmd", fig.align='left'}
+```{r, dpi= 200,  child="_sessioninfo.Rmd", fig.align='left'}
 ```
