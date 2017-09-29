@@ -1,5 +1,5 @@
 
-```{r, echo=FALSE, fig.height=4, fig.width=6, fig.align='left',message=FALSE, warning=FALSE}
+```{r, echo=FALSE, fig.height=6, fig.width=10, fig.align='left',message=FALSE, warning=FALSE}
 library(knitr)
 library(dplyr)
 library(forecast)
