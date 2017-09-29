@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Chris' Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">House</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+<li>
+  <a href="nextPage.html">Score Card</a>
+</li>
+<li>
+  <a href="thirdPage.html">Third Page</a>
+</li>
+<li>
+  <a href="projects.html">Projects</a>
+</li>
+<li>
+  <a href="ThankYouNote.html">Thank You Note</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fullData$Activity.Recorded.By &lt;-<span class="st"> </span><span class="kw">substring</span>(fullData$Activity.Recorded.By, <span class="dv">1</span>,<span class="dv">4</span>)
+
+startDates$FSR &lt;-<span class="st"> </span><span class="kw">substring</span>(startDates$FSR, <span class="dv">1</span>,<span class="dv">4</span>)
+startDates$Manager &lt;-<span class="st"> </span><span class="kw">substring</span>(startDates$Manager, <span class="dv">1</span>,<span class="dv">4</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kable</span>(<span class="kw">head</span>(fullData))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Running.Count</th>
+<th align="left">Actual.Activity.Date</th>
+<th align="left">Week.Ending</th>
+<th align="left">YearMonth</th>
+<th align="left">Activity.Recorded.By</th>
+<th align="left">Activity.Recorded.On</th>
+<th align="left">Rep.Role</th>
+<th align="left">Case.Type.Name…SA</th>
+<th align="right">SAP.Number</th>
+<th align="left">Practice.Name</th>
+<th align="left">City</th>
+<th align="left">State</th>
+<th align="left">Zip</th>
+<th align="left">Sales.Region</th>
+<th align="left">DPC.Territory</th>
+<th align="right">Activity.ID</th>
+<th align="left">Visit.Objective</th>
+<th align="left">Method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015</td>
+<td align="left">2015M01</td>
+<td align="left">Angi</td>
+<td align="left">1/1/2015</td>
+<td align="left">General</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">20613</td>
+<td align="left">COWETA ANIMAL HOSPITAL</td>
+<td align="left">NEWNAN</td>
+<td align="left">GA</td>
+<td align="left">30263</td>
+<td align="left">Southeast</td>
+<td align="left">Atlanta S, GA</td>
+<td align="right">22222315</td>
+<td align="left">New Install</td>
+<td align="left">Appointment</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015</td>
+<td align="left">2015M01</td>
+<td align="left">LeBo</td>
+<td align="left">1/1/2015</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">101848</td>
+<td align="left">FRANKFORT ANIMAL CLINIC</td>
+<td align="left">FRANKFORT</td>
+<td align="left">KY</td>
+<td align="left">40601</td>
+<td align="left">Tennessee Valley</td>
+<td align="left">Lexington, KY</td>
+<td align="right">22222027</td>
+<td align="left">Critical</td>
+<td align="left">Appointment</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015</td>
+<td align="left">2015M01</td>
+<td align="left">Luce</td>
+<td align="left">12/31/2014</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">178192</td>
+<td align="left">VETERINARY EMERGENCY AND SPECIALTY</td>
+<td align="left">SOUTH DEERFIELD</td>
+<td align="left">MA</td>
+<td align="left">1373</td>
+<td align="left">New England</td>
+<td align="left">Springfield, MA</td>
+<td align="right">22220250</td>
+<td align="left">New Install</td>
+<td align="left">Appointment</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015</td>
+<td align="left">2015M01</td>
+<td align="left">Melt</td>
+<td align="left">1/1/2015</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">15357</td>
+<td align="left">ALL CREATURES VETERINARY HOSPITAL</td>
+<td align="left">WICHITA</td>
+<td align="left">KS</td>
+<td align="left">67212</td>
+<td align="left">Mid America</td>
+<td align="left">Wichita, KS</td>
+<td align="right">22221738</td>
+<td align="left">New Install</td>
+<td align="left">Appointment</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015</td>
+<td align="left">2015M01</td>
+<td align="left">Mill</td>
+<td align="left">1/1/2015</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">124531</td>
+<td align="left">OAK ANIMAL HOSPITAL</td>
+<td align="left">VANCOUVER</td>
+<td align="left">BC</td>
+<td align="left">V6H 2</td>
+<td align="left">Western Canada</td>
+<td align="left">Vancouver N, BC</td>
+<td align="right">22221968</td>
+<td align="left">Strategic</td>
+<td align="left">Appointment</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015</td>
+<td align="left">2015M01</td>
+<td align="left">Mill</td>
+<td align="left">1/1/2015</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">286828</td>
+<td align="left">BURRARD ANIMAL HOSPITAL AND EMERGENCY</td>
+<td align="left">VANCOUVER</td>
+<td align="left">BC</td>
+<td align="left">V6J 1</td>
+<td align="left">Western Canada</td>
+<td align="left">Vancouver N, BC</td>
+<td align="right">22221971</td>
+<td align="left">New Install</td>
+<td align="left">Appointment</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kable</span>(<span class="kw">head</span>(startDates))</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">FSR</th>
+<th align="left">Manager</th>
+<th align="left">Last.Hire.Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Kare</td>
+<td align="left">Kare</td>
+<td align="left">6/12/2000</td>
+</tr>
+<tr class="even">
+<td align="left">Pegg</td>
+<td align="left">Juli</td>
+<td align="left">3/19/2007</td>
+</tr>
+<tr class="odd">
+<td align="left">Dana</td>
+<td align="left">Karl</td>
+<td align="left">3/19/2007</td>
+</tr>
+<tr class="even">
+<td align="left">Shar</td>
+<td align="left">Laur</td>
+<td align="left">5/21/2007</td>
+</tr>
+<tr class="odd">
+<td align="left">Caro</td>
+<td align="left">Karl</td>
+<td align="left">6/25/2007</td>
+</tr>
+<tr class="even">
+<td align="left">Lisa</td>
+<td align="left">Bobb</td>
+<td align="left">9/30/2007</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">FSR</th>
+<th align="left">Manager</th>
+<th align="left">Last.Hire.Date</th>
+<th align="left">Status</th>
+<th align="left">Actual.Activity.Date</th>
+<th align="left">Week.Ending</th>
+<th align="left">YearMonth</th>
+<th align="left">Rep.Role</th>
+<th align="left">Case.Type.Name…SA</th>
+<th align="right">SAP.Number</th>
+<th align="left">Practice.Name</th>
+<th align="left">City</th>
+<th align="left">State</th>
+<th align="left">Zip</th>
+<th align="left">Sales.Region</th>
+<th align="left">DPC.Territory</th>
+<th align="right">Activity.ID</th>
+<th align="left">Visit.Objective</th>
+<th align="left">Method</th>
+<th align="right">Index</th>
+<th align="right">WeekNumber</th>
+<th align="left">Day</th>
+<th align="left">DayWeekEnding</th>
+<th align="right">Visits</th>
+<th align="right">Visitors</th>
+<th align="right">meanVisitsWeekbyStatus</th>
+<th align="right">SeasonedAverage</th>
+<th align="right">YellowAverage</th>
+<th align="right">RecentAverage</th>
+<th align="right">TotalVisitsthisWeek</th>
+<th align="right">SeasonedAvDiffFSR</th>
+<th align="right">YellowAvDiffFSR</th>
+<th align="right">RecentAvDiffFSR</th>
+<th align="right">SeasAvDiffYellAv</th>
+<th align="right">SeasAvDiffRecentAv</th>
+<th align="right">YellowAv_RecAv</th>
+<th align="left">ZscoreFSR</th>
+<th align="right">Latitude</th>
+<th align="right">Longitude</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Muns.K</td>
+<td align="left">Kare</td>
+<td align="left">6/12/2000</td>
+<td align="left">Seasoned</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015 0:00</td>
+<td align="left">2015M01</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">191599</td>
+<td align="left">STONECLIFF ANIMAL CLINIC OF NEW</td>
+<td align="left">LEBANON</td>
+<td align="left">NH</td>
+<td align="left">3766</td>
+<td align="left">New England</td>
+<td align="left">Burlington, VT</td>
+<td align="right">22221939</td>
+<td align="left">New Install</td>
+<td align="left">Appointment</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="left">Thursday</td>
+<td align="left">Sunday</td>
+<td align="right">35</td>
+<td align="right">19</td>
+<td align="right">1.84</td>
+<td align="right">1.84</td>
+<td align="right">2.4</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">-0.16</td>
+<td align="right">0.4</td>
+<td align="right">NA</td>
+<td align="right">-0.56</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">1.414213562</td>
+<td align="right">44.47588</td>
+<td align="right">-73.21207</td>
+</tr>
+<tr class="even">
+<td align="left">Muns.K</td>
+<td align="left">Kare</td>
+<td align="left">6/12/2000</td>
+<td align="left">Seasoned</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015 0:00</td>
+<td align="left">2015M01</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">268304</td>
+<td align="left">MEREDITH PLACE VETERINARY EMERGENCY</td>
+<td align="left">MEREDITH</td>
+<td align="left">NH</td>
+<td align="left">3253</td>
+<td align="left">New England</td>
+<td align="left">Manchester, NH</td>
+<td align="right">22222008</td>
+<td align="left">Strategic</td>
+<td align="left">Appointment</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="left">Thursday</td>
+<td align="left">Sunday</td>
+<td align="right">35</td>
+<td align="right">19</td>
+<td align="right">1.84</td>
+<td align="right">1.84</td>
+<td align="right">2.4</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">-0.16</td>
+<td align="right">0.4</td>
+<td align="right">NA</td>
+<td align="right">-0.56</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">1.414213562</td>
+<td align="right">42.99564</td>
+<td align="right">-71.45479</td>
+</tr>
+<tr class="odd">
+<td align="left">Mill.J</td>
+<td align="left">Dani</td>
+<td align="left">9/23/2013</td>
+<td align="left">Seasoned</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015 0:00</td>
+<td align="left">2015M01</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">124531</td>
+<td align="left">OAK ANIMAL HOSPITAL</td>
+<td align="left">VANCOUVER</td>
+<td align="left">BC</td>
+<td align="left">V6H 2</td>
+<td align="left">Western Canada</td>
+<td align="left">Vancouver N, BC</td>
+<td align="right">22221968</td>
+<td align="left">Strategic</td>
+<td align="left">Appointment</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="left">Thursday</td>
+<td align="left">Sunday</td>
+<td align="right">35</td>
+<td align="right">19</td>
+<td align="right">1.84</td>
+<td align="right">1.84</td>
+<td align="right">2.4</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">-2.16</td>
+<td align="right">-1.6</td>
+<td align="right">NA</td>
+<td align="right">-0.56</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">1.414213562</td>
+<td align="right">49.31998</td>
+<td align="right">-123.07241</td>
+</tr>
+<tr class="even">
+<td align="left">Mill.J</td>
+<td align="left">Dani</td>
+<td align="left">9/23/2013</td>
+<td align="left">Seasoned</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015 0:00</td>
+<td align="left">2015M01</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">286828</td>
+<td align="left">BURRARD ANIMAL HOSPITAL AND EMERGENCY</td>
+<td align="left">VANCOUVER</td>
+<td align="left">BC</td>
+<td align="left">V6J 1</td>
+<td align="left">Western Canada</td>
+<td align="left">Vancouver N, BC</td>
+<td align="right">22221971</td>
+<td align="left">New Install</td>
+<td align="left">Appointment</td>
+<td align="right">4</td>
+<td align="right">0</td>
+<td align="left">Thursday</td>
+<td align="left">Sunday</td>
+<td align="right">35</td>
+<td align="right">19</td>
+<td align="right">1.84</td>
+<td align="right">1.84</td>
+<td align="right">2.4</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">-2.16</td>
+<td align="right">-1.6</td>
+<td align="right">NA</td>
+<td align="right">-0.56</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">1.414213562</td>
+<td align="right">49.31998</td>
+<td align="right">-123.07241</td>
+</tr>
+<tr class="odd">
+<td align="left">Angi.B</td>
+<td align="left">Will</td>
+<td align="left">2/17/2014</td>
+<td align="left">Seasoned</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015 0:00</td>
+<td align="left">2015M01</td>
+<td align="left">General</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">20613</td>
+<td align="left">COWETA ANIMAL HOSPITAL</td>
+<td align="left">NEWNAN</td>
+<td align="left">GA</td>
+<td align="left">30263</td>
+<td align="left">Southeast</td>
+<td align="left">Atlanta S, GA</td>
+<td align="right">22222315</td>
+<td align="left">New Install</td>
+<td align="left">Appointment</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="left">Thursday</td>
+<td align="left">Sunday</td>
+<td align="right">35</td>
+<td align="right">19</td>
+<td align="right">1.84</td>
+<td align="right">1.84</td>
+<td align="right">2.4</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0.84</td>
+<td align="right">1.4</td>
+<td align="right">NA</td>
+<td align="right">-0.56</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">-1.414213562</td>
+<td align="right">33.74900</td>
+<td align="right">-84.38798</td>
+</tr>
+<tr class="even">
+<td align="left">Melt.R</td>
+<td align="left">Audr</td>
+<td align="left">11/3/2014</td>
+<td align="left">Yellow</td>
+<td align="left">1/1/2015</td>
+<td align="left">1/4/2015 0:00</td>
+<td align="left">2015M01</td>
+<td align="left">FSR - DX</td>
+<td align="left">FTS Sales Activity</td>
+<td align="right">15357</td>
+<td align="left">ALL CREATURES VETERINARY HOSPITAL</td>
+<td align="left">WICHITA</td>
+<td align="left">KS</td>
+<td align="left">67212</td>
+<td align="left">Mid America</td>
+<td align="left">Wichita, KS</td>
+<td align="right">22221738</td>
+<td align="left">New Install</td>
+<td align="left">Appointment</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="left">Thursday</td>
+<td align="left">Sunday</td>
+<td align="right">24</td>
+<td align="right">10</td>
+<td align="right">2.40</td>
+<td align="right">1.84</td>
+<td align="right">2.4</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">-0.16</td>
+<td align="right">0.4</td>
+<td align="right">NA</td>
+<td align="right">-0.56</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="left">-1.414213562</td>
+<td align="right">37.68718</td>
+<td align="right">-97.33005</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
