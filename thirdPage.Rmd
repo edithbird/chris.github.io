@@ -4,3 +4,14 @@ title: "Third Page"
 
 This is the third page. 
 It should be pretty interesting, full of 3s. 
+
+
+# <span style= "color:grey">**3 - 3 - 3**</span>
+
+# <span style= "color:grey">**3 - 3 - 3**</span>
+
+
+
+| [![Religion](Art2.jpg)]()  | [![Wuphoria](Art.jpg)]() | [![Rapture](Art3.jpg) |
+|:---:|:---:|:---:|
+| Religion | Euphoria | Rapture |

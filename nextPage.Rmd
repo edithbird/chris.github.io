@@ -1,5 +1,5 @@
 ---
-title: "Next Page"
+title: "Quiddler Score Card"
 ---
 
 ![Here is the word](Quiddler.png)
