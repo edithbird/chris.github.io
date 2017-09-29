@@ -1,9 +1,21 @@
 
-```{r, echo=FALSE,  message=FALSE, warning=FALSE}
-library(forecast)
+```{r, echo=FALSE, fig.height=4, fig.width=6, fig.align='left',message=FALSE, warning=FALSE}
 library(knitr)
-travel911 <- read.csv("travel911.csv", header = T, stringsAsFactors = F)
-travel.ts <- ts(travel911$Air.RPM..000s., start = c(1990,1), frequency = 12)
-plot(travel.ts, ylab = "Miles", xlab = "Time")
-kable(head(travel911))
+library(dplyr)
+library(forecast)
+travel <- read.csv("travel911.csv", header = TRUE, stringsAsFactors = FALSE)
+names(travel)[1:4] <- c("month_yr", "air.miles", "rail.miles", "car.miles.in.billions")
+#travel <- travel %>% mutate(Air = log(air.miles), Rail = log(rail.miles), Street = log(car.miles.in.billions))
+kable(head(travel))
+
+travel.ts. <- ts(travel$air.miles, start = c(1990,1), frequency = 12)
+
+airlinear <- tslm(travel.ts. ~ trend)
+airQuad <- tslm(travel.ts. ~ trend + I(trend^2))
+plot(travel.ts., col="blue", #lty=1, lwd=2, 
+     xlab = "Month/Year", ylab = "Air Miles",  ylim = c(29000000, 70000000), #pch = 20, type = "b", 
+     main = "Air Travel with Trend")
+#par(mfrow = c(2, 1))
+lines(airlinear$fitted, lwd = 2)
+lines(airQuad$fitted, lty=2, lwd=3)
 ```
