@@ -1,5 +1,5 @@
 
-```{r, echo=FALSE, dpi= 200, fig.align='left',message=FALSE, warning=FALSE}
+```{r, echo=FALSE, out.width = '40%',  fig.align='left',message=FALSE, warning=FALSE}
 library(knitr)
 library(dplyr)
 library(forecast)
