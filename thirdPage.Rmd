@@ -12,6 +12,9 @@ It should be pretty interesting, full of 3s.
 
 [Here is the code instructions on how to do this](https://gist.githubusercontent.com/grocky/5d75af69b4f4c10304bf/raw/8667dd762457e4242650cfd2e5a77c817624523b/side-by-side-images.md)
 
-| [![Religion](Art2.jpg)]()  | [![Wuphoria](Art.jpg)]() | [![Rapture](Art3.jpg) |
+
+| [![Religion](Art2.jpg)]()  | [![Euphoria](Art.jpg)]() | ![Rapture](Art3.jpg) |
 |:---:|:---:|:---:|
-| Religion | Euphoria | Rapture |
+| Towards Universal | Pattern | Recognition |
+
+Artist: Jeremy Shaw of Canada

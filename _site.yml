@@ -11,6 +11,8 @@ navbar:
       href: nextPage.html
     - text: "Third Page"
       href: thirdPage.html
+    - text: "Projects"
+      href: projects.html
     
       
 output:
