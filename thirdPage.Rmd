@@ -10,7 +10,7 @@ It should be pretty interesting, full of 3s.
 
 # <span style= "color:grey">**3 - 3 - 3**</span>
 
-
+[Here is the code instructions on how to do this](https://gist.githubusercontent.com/grocky/5d75af69b4f4c10304bf/raw/8667dd762457e4242650cfd2e5a77c817624523b/side-by-side-images.md)
 
 | [![Religion](Art2.jpg)]()  | [![Wuphoria](Art.jpg)]() | [![Rapture](Art3.jpg) |
 |:---:|:---:|:---:|
