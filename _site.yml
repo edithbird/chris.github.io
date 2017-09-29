@@ -6,6 +6,8 @@ navbar:
   left:
     - text: "House"
       href: index.html
+      fig_width: 6 
+      fig_height: 4
     - text: "About Me"
       href: about.html
     - text: "Score Card"  
@@ -18,8 +20,8 @@ navbar:
       
 output:
   html_document:
-    theme: cosmo
-    highlight: textmate
+    theme: united
+    highlight: haddock
     css: style.css
     fig_width: 6
     fig_height: 4

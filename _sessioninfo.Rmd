@@ -1,3 +1,9 @@
+```{r}
+knitr::opts_chunk$set(fig.width=12, fig.height=8) 
+```
+
+
+
 
 ```{r, echo=FALSE, out.width = '40%',  fig.align='left',message=FALSE, warning=FALSE}
 library(knitr)
