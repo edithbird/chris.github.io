@@ -2,4 +2,9 @@
 title: "Next Page"
 ---
 
+![Here is the word](Quiddler.png)
+
+[Let's Keep Score!](http://ec2-54-191-127-173.us-west-2.compute.amazonaws.com:3838/ThisIsTheOne/)
+
+
 This is the next page. The next page follows the previous page. 

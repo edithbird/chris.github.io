@@ -11,10 +11,12 @@ navbar:
       href: nextPage.html
     - text: "Third Page"
       href: thirdPage.html
+    
       
 output:
   html_document:
     theme: cosmo
+    highlight: textmate
     css: style.css
       
      

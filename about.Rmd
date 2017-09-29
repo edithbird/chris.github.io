@@ -6,4 +6,10 @@ This is the about page.
 
 Here is me. 
 
-![](Chris.jpg)
+
+More about this website.
+
+
+
+```{r, child="sessionInfo.Rmd"}
+```
