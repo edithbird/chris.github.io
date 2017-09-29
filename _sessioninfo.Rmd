@@ -1,0 +1,9 @@
+
+```{r, echo=FALSE,  message=FALSE, warning=FALSE}
+library(forecast)
+library(knitr)
+travel911 <- read.csv("travel911.csv", header = T, stringsAsFactors = F)
+travel.ts <- ts(travel911$Air.RPM..000s., start = c(1990,1), frequency = 12)
+plot(travel.ts, ylab = "Miles", xlab = "Time")
+kable(head(travel911))
+```

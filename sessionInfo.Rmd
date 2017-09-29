@@ -1,6 +1,7 @@
 Session information:
 
 ```{r}
+
 head(mtcars)
 ```
 
