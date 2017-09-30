@@ -17,7 +17,6 @@ Step 1
 
 Look at the data. The full record is made up of 46755 rows of records with 18 different attributes. I have shown a sample below. I've truncated all names for anonymity but not standardized them for analysis, just to show the raw data.
 
-
 ```{r, child="_note.Rmd"}
 ```
 

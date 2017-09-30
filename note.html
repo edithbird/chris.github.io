@@ -220,7 +220,7 @@ $(document).ready(function () {
   <a href="projects.html">Projects</a>
 </li>
 <li>
-  <a href="ThankYouNote.html">Thank You Note</a>
+  <a href="thankYouInfo.html">Thank You Note</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -238,6 +238,15 @@ $(document).ready(function () {
 </div>
 
 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tidyr)
+<span class="kw">library</span>(stringr)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(scales)
+<span class="kw">library</span>(lubridate)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fullData &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/Chris Iyer/Documents/R/myrepo/FullDataOrig.csv&quot;</span>, <span class="dt">header =</span> T, <span class="dt">na.strings=</span><span class="kw">c</span>(<span class="st">&quot;&quot;</span>,<span class="st">&quot;NA&quot;</span>), <span class="dt">stringsAsFactors =</span> F)
+startDates &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/Chris Iyer/Documents/R/myrepo/StartDates.csv&quot;</span>, <span class="dt">header =</span> T, <span class="dt">stringsAsFactors =</span> F)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fullData$Activity.Recorded.By &lt;-<span class="st"> </span><span class="kw">substring</span>(fullData$Activity.Recorded.By, <span class="dv">1</span>,<span class="dv">4</span>)
 
 startDates$FSR &lt;-<span class="st"> </span><span class="kw">substring</span>(startDates$FSR, <span class="dv">1</span>,<span class="dv">4</span>)
@@ -431,6 +440,8 @@ startDates$Manager &lt;-<span class="st"> </span><span class="kw">substring</spa
 </tr>
 </tbody>
 </table>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">NewDataSet &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;C:/Users/Chris Iyer/Documents/R/myrepo/FinalFullSet.csv&quot;</span>, <span class="dt">header =</span> T, <span class="dt">stringsAsFactors =</span> F)
+<span class="kw">kable</span>(<span class="kw">head</span>(NewDataSet))</code></pre></div>
 <table>
 <thead>
 <tr class="header">

@@ -6,34 +6,18 @@ library(stringr)
 library(ggplot2)
 library(scales)
 library(lubridate)
-```
-
-```{r read in original data}
 
 fullData <- read.csv("C:/Users/Chris Iyer/Documents/R/myrepo/FullDataOrig.csv", header = T, na.strings=c("","NA"), stringsAsFactors = F)
 startDates <- read.csv("C:/Users/Chris Iyer/Documents/R/myrepo/StartDates.csv", header = T, stringsAsFactors = F)
-```
 
-
-```{r}
 fullData$Activity.Recorded.By <- substring(fullData$Activity.Recorded.By, 1,4)
 
 startDates$FSR <- substring(startDates$FSR, 1,4)
 startDates$Manager <- substring(startDates$Manager, 1,4)
-```
 
-
-```{r}
 kable(head(fullData))
-```
 
-
-```{r}
 kable(head(startDates))
-```
-
-
-```{r}
 NewDataSet <- read.csv("C:/Users/Chris Iyer/Documents/R/myrepo/FinalFullSet.csv", header = T, stringsAsFactors = F)
 kable(head(NewDataSet))
 ```
