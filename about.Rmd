@@ -4,7 +4,7 @@ title: "My Resume"
 
 
 
-###Christine Iyer | [christine@christineiyer.com](christine@christineiyer.com)
+###Christine Iyer  [christine@christineiyer.com](mailto:christine@christineiyer.com)
 
 ---
 Objective
