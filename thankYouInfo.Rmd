@@ -203,4 +203,6 @@ The visit types represented in the full data are shown below. The subset here is
 
 ![](seventeen.jpg)
 
-Unfortunately I ran out of time on my Tableau trial, I would have like to build a sample dashboard showing segments in time and individual FSRs relative performance to the expectations set by the Red team. 
+Unfortunately I ran out of time on my Tableau trial, I would have like to build a sample dashboard showing segments in time and individual FSRs relative performance to the expectations set by the Red team.
+
+So, Thank you. 
