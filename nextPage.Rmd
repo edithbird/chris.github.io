@@ -3,8 +3,6 @@ title: "Quiddler Score Card"
 ---
 
 
-#[Stop what you're doing and send all complaints to the Quiddler Master, Paul](mailto:elrond.39@gmail.com)
-
 ![Here is the word](Quiddler.png)
 
 [Let's Keep Score!](http://ec2-54-191-127-173.us-west-2.compute.amazonaws.com:3838/ThisIsTheOne/)
