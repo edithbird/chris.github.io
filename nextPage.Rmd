@@ -3,7 +3,7 @@ title: "Quiddler Score Card"
 ---
 
 
-#[Stop what you're doing and send all complaints to the Quiddler Master, Paul](mail.to:elrond.39@gmail.com)
+#[Stop what you're doing and send all complaints to the Quiddler Master, Paul](mailto:elrond.39@gmail.com)
 
 ![Here is the word](Quiddler.png)
 
