@@ -17,7 +17,7 @@ navbar:
     - text: "Projects"
       href: projects.html
     - text: "Thank You Note"
-      href: thankYouInfo.html
+      href: ThankYouNote.html
     
       
 output:
