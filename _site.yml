@@ -18,6 +18,8 @@ navbar:
       href: projects.html
     - text: "Thank You Note"
       href: thankYouInfo.html
+    - text: "Election"
+      href: electionPage.html
     
       
 output:

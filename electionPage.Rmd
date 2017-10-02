@@ -1,0 +1,6 @@
+---
+title: "Election"
+---
+
+```{r, child="_sessionElection.Rmd"}
+```
