@@ -22,8 +22,8 @@ navbar:
       
 output:
   html_document:
-    theme: united
-    highlight: pygments
+    theme: cerulean
+    highlight: pygment
     css: style.css
     fig_width: 6
     fig_height: 4
