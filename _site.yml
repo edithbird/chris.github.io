@@ -16,8 +16,6 @@ navbar:
       href: thirdPage.html
     - text: "Projects"
       href: projects.html
-    - text: "Thank You Note"
-      href: thankYouInfo.html
     - text: "Election"
       href: electionPage.html
     

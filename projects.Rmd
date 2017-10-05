@@ -5,9 +5,16 @@ title: "Projects"
 
 ###Class Projects
 
-| [![Religion](Brain.png)](https://rpubs.com/chrisiyer/220669)  | [![Euphoria](Terrorism.png)](https://public.tableau.com/profile/christine.iyer#!/vizhome/FinalAsssignment4/Howscaredshouldwebe) | [![Rapture](Inv.png)](https://rpubs.com/chrisiyer/Final) | [![Euphoria](WG.png)](https://rpubs.com/chrisiyer/sp_500)|
+| [![Religion](Brain.png)](https://rpubs.com/chrisiyer/220669) | [![Scheduling](ideal.png)](http://rpubs.com/chrisiyer/Scheduling) | [![Rapture](Inv.png)](https://rpubs.com/chrisiyer/Final) | [![Euphoria](WG.png)](https://rpubs.com/chrisiyer/sp_500)|
 |:---:|:---:|:---:|:---:|
-| Cancer | Terror | Forecasting | Stock Market |
+| Cancer | Scheduling with Simplex LP | Forecasting | Stock Market |
+
+ 
+ <br>
+ 
+| [![Productivity Expectations](productivity.png)](http://rpubs.com/crystalPlots/SolutionNotes) | |[![Euphoria](Terrorism.png)](https://public.tableau.com/profile/christine.iyer#!/vizhome/FinalAsssignment4/Howscaredshouldwebe)|
+|:---:|:---:|:---:|
+| Measuring Productivity |  |Terrorism 2012 & 2015|
 
 MAPPING: 
 
@@ -22,3 +29,9 @@ FORECASTING:
 STOCK MARKET: 
 
 *	[S&P 500 during Watergate – Watergate events plotted on the S&P500 price chart.](https://rpubs.com/chrisiyer/sp_500) 
+
+SOLUTIONS:
+
+* [Time it takes to achieve expected productivity.](http://rpubs.com/crystalPlots/SolutionNotes)
+
+* [Scheduling fraud reviewers using Linear Programming.](http://rpubs.com/chrisiyer/Scheduling)
