@@ -2,10 +2,9 @@
 title: "Quiddler Score Card"
 ---
 
-Quiddler is my favorite game. If you have the game, you can keep track of your points on this interactive score card and see how you do compared to your opponents. My personal best is 259. 
- 
- 
-[![](ScoreCard.png)](http://ec2-54-191-127-173.us-west-2.compute.amazonaws.com:3838/ThisIsTheOne/)
+Quiddler is my favorite game. If you have the game, you can keep track of your points on this interactive score card and see how you do compared to your opponents. My personal best is 259. [Click here to be directed.](http://ec2-54-191-127-173.us-west-2.compute.amazonaws.com:3838/ThisIsTheOne/) 
+
+[![Score Card](ScoreCard.png)](http://ec2-54-191-127-173.us-west-2.compute.amazonaws.com:3838/ThisIsTheOne/)
 
 
 [![W-O-R-D](FullSizeRender.jpg)](http://ec2-54-191-127-173.us-west-2.compute.amazonaws.com:3838/ThisIsTheOne/)
