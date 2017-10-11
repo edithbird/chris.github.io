@@ -30,49 +30,6 @@
 </script>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -250,51 +207,26 @@ $(document).ready(function () {
 </div>
 
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
-<span class="kw">library</span>(twitteR)</code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;twitteR&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     id, location</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(purrr)
-<span class="kw">library</span>(ggplot2)
-<span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(pander)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#load tweets and source </span>
-number_of_tweets &lt;-<span class="st"> </span><span class="dv">5</span>
-RT &lt;-<span class="st"> </span><span class="kw">userTimeline</span>(<span class="st">&#39;@realDonaldTrump&#39;</span>, <span class="dt">n =</span> number_of_tweets)
-RT_df &lt;-<span class="st"> </span><span class="kw">twListToDF</span>(RT)
-RT_tweets &lt;-<span class="st"> </span>RT_df %&gt;%<span class="st"> </span><span class="kw">rename</span>(<span class="dt">Text =</span> text) %&gt;%<span class="st"> </span>
-<span class="st">  </span><span class="kw">select</span>(Text)
-<span class="kw">pander</span>(RT_tweets)</code></pre></div>
-<table style="width:42%;">
+<p><img src="Twitter_files/figure-html/unnamed-chunk-4-1.png" width="576" /><img src="Twitter_files/figure-html/unnamed-chunk-4-2.png" width="576" /></p>
+<table style="width:53%;">
 <colgroup>
-<col width="41%" />
+<col width="43%" />
+<col width="9%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="center">Text</th>
+<th align="center">Tweet</th>
+<th align="center">Count</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">It is about time that Roger Goodell of the NFL is finally demanding that all players STAND for our great National Anthem-RESPECT OUR COUNTRY</td>
-</tr>
-<tr class="even">
-<td align="center">The Democrats want MASSIVE tax increases &amp; soft, crime producing borders.The Republicans want the biggest tax cut in history &amp; the WALL!</td>
-</tr>
-<tr class="odd">
-<td align="center">It would be really nice if the Fake News Media would report the virtually unprecedented Stock Market growth since the election.Need tax cuts</td>
-</tr>
-<tr class="even">
-<td align="center">…if Congress gives us the massive tax cuts (and reform) I am asking for, those numbers will grow by leaps and bounds. #MAGA</td>
-</tr>
-<tr class="odd">
-<td align="center">Stock Market has increased by 5.2 Trillion dollars since the election on November 8th, a 25% increase. Lowest unemployment in 16 years and..</td>
+<td align="center">.<span class="citation">@Sling</span> Such a bummer ads interrupt mid-segment (incl. moment of zen) at an increased volume. Cancelling.</td>
+<td align="center">0</td>
 </tr>
 </tbody>
 </table>
+<p><img src="Twitter_files/figure-html/unnamed-chunk-5-1.png" width="576" /></p>
 
 
 

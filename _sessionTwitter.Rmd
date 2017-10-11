@@ -6,17 +6,21 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-```{r}
-library(knitr)
-library(twitteR)
-library(purrr)
-library(ggplot2)
+```{r, message=FALSE, warning=FALSE}
 library(dplyr)
+library(knitr)
 library(pander)
+library(twitteR)
+library(tidytext)
+library(stringr)
+library(ggplot2)
+library(purrr)
+library(tidyr)
+library(wordcloud)
 ```
 
 
@@ -32,23 +36,47 @@ setup_twitter_oauth(consumer_key, consumer_secret,
                     access_token, access_secret)
 #getTwitterOAuth(consumer_key, consumer_secret)
 
-num_tweets <- 2
+num_tweets <- 10
 colors <- c("#A7A7A7",
  "dodgerblue",
  "firebrick",
  "forestgreen",
  "gold")
+
+
 ```
 
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
+retweetOverTime <- userTimeline('@ChristineIyer', n = num_tweets)
+retweets_df <- twListToDF(retweetOverTime)
+retweets_df$created <- as.Date(retweets_df$created, format = "%m-%d-%Y")
+summarisedReTweets <- retweets_df %>% group_by(created) %>% summarise(n = n(), sumRetweets = sum(retweetCount))
+ggplot(summarisedReTweets, aes(x = created, y = sumRetweets, size = n)) + geom_point() + theme_bw()
+ggplot(summarisedReTweets, aes(x = created, y = sumRetweets)) + geom_line()+theme_bw()
+```
+
+
+```{r, message=FALSE, warning=FALSE}
 #load tweets and source 
 number_of_tweets <- 5
-RT <- userTimeline('@realDonaldTrump', n = number_of_tweets)
+RT <- userTimeline('@ChristineIyer', n = number_of_tweets)
 RT_df <- twListToDF(RT)
-RT_tweets <- RT_df %>% rename(Text = text) %>% 
-  select(Text)
+RT_tweets <- RT_df %>% rename(Tweet = text, Count = retweetCount) %>% 
+  select(Tweet, Count)
 pander(RT_tweets)
+
+
+sbT_df <- tbl_df(map_df(RT, as.data.frame))
+tweets <- sbT_df %>% select(#id, statusSource,
+  text, created) #%>% extract(statusSource, "source", "Twitter for (.*?)<")
+reg <- "([^A-Za-z\\d#@']|'('?![A-Za-z\\d#@]))"
+tweet_words <- tweets %>% filter(!str_detect(text, '^"')) %>% mutate(text = str_replace_all(text, "https://t.co/[A-Za-z\\d]+|&amp;", "")) %>% unnest_tokens(word, text, token = "regex", pattern = reg) %>% filter (!word %in% stop_words$word, str_detect(word, "[a-z]"))
+#kable(head(tweet_words))
+nrc <- sentiments %>% filter( lexicon == "nrc") %>% select(word, sentiment)
+#kable(head(nrc))
+#kable(head(tweets, 5))
+tweet_words %>% count(word) %>% arrange(n) %>% with(wordcloud(word, n, max.words = 100, scale=c(5,.5),min.freq=5, random.order=FALSE, rot.per=.15, colors=brewer.pal(9,"Blues")))
 ```
 
 
