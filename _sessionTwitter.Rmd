@@ -1,0 +1,54 @@
+---
+title: "Twitter Trends"
+author: "Christine Iyer"
+date: "October 11, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(knitr)
+library(twitteR)
+library(purrr)
+library(ggplot2)
+library(dplyr)
+library(pander)
+```
+
+
+
+
+
+```{r, include=FALSE}
+consumer_key <- "UsCe7XLj03gFbK3C3aILJA1vd"
+consumer_secret <- "dXrS7DFrvPErpm5LqjkibXFlkPBww7J4lJAOObk38b04tLGwvW"
+access_token <- "909252506-W4WONt5BJTg9tVkrtnVE4poh3cikfUZYc0wOrCMH"
+access_secret <- "e5tQ6yRwYzAXiGxanu0xyf7x0X36KtQMITtxPzbuLE1NK"
+setup_twitter_oauth(consumer_key, consumer_secret,
+                    access_token, access_secret)
+#getTwitterOAuth(consumer_key, consumer_secret)
+
+num_tweets <- 2
+colors <- c("#A7A7A7",
+ "dodgerblue",
+ "firebrick",
+ "forestgreen",
+ "gold")
+```
+
+
+```{r}
+#load tweets and source 
+number_of_tweets <- 5
+RT <- userTimeline('@realDonaldTrump', n = number_of_tweets)
+RT_df <- twListToDF(RT)
+RT_tweets <- RT_df %>% rename(Text = text) %>% 
+  select(Text)
+pander(RT_tweets)
+```
+
+

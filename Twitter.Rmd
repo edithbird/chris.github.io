@@ -1,0 +1,6 @@
+---
+title: "Twitter"
+---
+
+```{r, child="_sessionTwitter.Rmd"}
+```

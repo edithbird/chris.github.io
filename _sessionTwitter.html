@@ -9,9 +9,11 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Christine Iyer" />
 
+<meta name="date" content="2017-10-11" />
 
-<title></title>
+<title>Twitter Trends</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -230,9 +232,6 @@ $(document).ready(function () {
 <li>
   <a href="electionPage.html">Election</a>
 </li>
-<li>
-  <a href="Twitter.html">Twitter Trends</a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -245,19 +244,34 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Twitter Trends</h1>
+<h4 class="author"><em>Christine Iyer</em></h4>
+<h4 class="date"><em>October 11, 2017</em></h4>
 
 </div>
 
 
-<p>Session information:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(mtcars)</code></pre></div>
-<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(twitteR)
+<span class="kw">library</span>(purrr)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)</code></pre></div>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.4.1</code></pre>
+<pre><code>## Warning: Installed Rcpp (0.12.10) different from Rcpp used to build dplyr (0.12.11).
+## Please reinstall dplyr to avoid random crashes or undefined behavior.</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:purrr&#39;:
+## 
+##     contains, order_by</code></pre>
+<pre><code>## The following objects are masked from &#39;package:twitteR&#39;:
+## 
+##     id, location</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
 
 
 

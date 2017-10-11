@@ -18,6 +18,8 @@ navbar:
       href: projects.html
     - text: "Election"
       href: electionPage.html
+    - text: "Twitter Trends"
+      href: Twitter.html
     
       
 output:

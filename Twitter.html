@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>Twitter</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -245,19 +245,56 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Twitter</h1>
 
 </div>
 
 
-<p>Session information:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(mtcars)</code></pre></div>
-<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
-## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
+<span class="kw">library</span>(twitteR)</code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;twitteR&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
+## 
+##     id, location</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(purrr)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(pander)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#load tweets and source </span>
+number_of_tweets &lt;-<span class="st"> </span><span class="dv">5</span>
+RT &lt;-<span class="st"> </span><span class="kw">userTimeline</span>(<span class="st">&#39;@realDonaldTrump&#39;</span>, <span class="dt">n =</span> number_of_tweets)
+RT_df &lt;-<span class="st"> </span><span class="kw">twListToDF</span>(RT)
+RT_tweets &lt;-<span class="st"> </span>RT_df %&gt;%<span class="st"> </span><span class="kw">rename</span>(<span class="dt">Text =</span> text) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(Text)
+<span class="kw">pander</span>(RT_tweets)</code></pre></div>
+<table style="width:42%;">
+<colgroup>
+<col width="41%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">It is about time that Roger Goodell of the NFL is finally demanding that all players STAND for our great National Anthem-RESPECT OUR COUNTRY</td>
+</tr>
+<tr class="even">
+<td align="center">The Democrats want MASSIVE tax increases &amp; soft, crime producing borders.The Republicans want the biggest tax cut in history &amp; the WALL!</td>
+</tr>
+<tr class="odd">
+<td align="center">It would be really nice if the Fake News Media would report the virtually unprecedented Stock Market growth since the election.Need tax cuts</td>
+</tr>
+<tr class="even">
+<td align="center">…if Congress gives us the massive tax cuts (and reform) I am asking for, those numbers will grow by leaps and bounds. #MAGA</td>
+</tr>
+<tr class="odd">
+<td align="center">Stock Market has increased by 5.2 Trillion dollars since the election on November 8th, a 25% increase. Lowest unemployment in 16 years and..</td>
+</tr>
+</tbody>
+</table>
 
 
 
