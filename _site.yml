@@ -27,5 +27,7 @@ output:
     css: style.css
     fig_width: 6
     fig_height: 4
+    includes:
+       in_header: GA_Script.html
       
      
