@@ -52,7 +52,8 @@ retweetOverTime <- userTimeline('@realDonaldTrump', n = num_tweets)
 retweets_df <- twListToDF(retweetOverTime)
 retweets_df$created <- as.Date(retweets_df$created, format = "%m-%d-%Y")
 summarisedReTweets <- retweets_df %>% group_by(created) %>% summarise(n = n(), sumRetweets = sum(retweetCount)) %>% rename(Date = created)
-ggplot(summarisedReTweets, aes(x = Date, y = sumRetweets, size = n)) + geom_point() + theme_bw()
+ggplot(summarisedReTweets, aes(x = Date, y = n, size = sumRetweets, color = sumRetweets)) + geom_point() + theme_bw() + 
+scale_size(range = c(1,25)) + theme(legend.position="none")
 ggplot(summarisedReTweets, aes(x = Date, y = sumRetweets)) + geom_line()+theme_bw()
 ```
 
