@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 library(knitr)
 library(dplyr)
 library(tidyr)
+library(data.table)
 ```
 
 
@@ -29,11 +30,11 @@ Heres is one csv
 url1 <- url("https://raw.githubusercontent.com/JeffSackmann/tennis_pointbypoint/master/pbp_matches_atp_main_current.csv")
 x <- read.csv(url1, header = T, stringsAsFactors = F)
 
+
 ```
 
 ```{r}
 x$date <- as.Date(x$date, format = "%d %b %y")
-
 xx <- x %>% mutate(Winner = ifelse(winner == 2, server2,server1), Loser = ifelse(winner == 1, server2, server1)) %>% select(date, Winner, Loser,server1, server2)
 
 
@@ -66,4 +67,6 @@ kable(p %>% group_by(Name) %>%  summarise(GamesPlayed = n(), GamesWon = sum(Poin
 
 
 ```
+
+
 
