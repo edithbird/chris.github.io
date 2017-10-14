@@ -1,0 +1,69 @@
+---
+title: "Tennis Point by Point"
+author: "Christine Iyer"
+date: "October 12, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+
+```{r}
+library(knitr)
+library(dplyr)
+library(tidyr)
+```
+
+
+[Tennis Point by Point shows data from this github site.](https://github.com/JeffSackmann/tennis_pointbypoint/blob/master/README.md) 
+
+Heres is one csv
+
+```{r}
+url1 <- url("https://raw.githubusercontent.com/JeffSackmann/tennis_pointbypoint/master/pbp_matches_atp_main_current.csv")
+x <- read.csv(url1, header = T, stringsAsFactors = F)
+
+```
+
+```{r}
+x$date <- as.Date(x$date, format = "%d %b %y")
+
+xx <- x %>% mutate(Winner = ifelse(winner == 2, server2,server1), Loser = ifelse(winner == 1, server2, server1)) %>% select(date, Winner, Loser,server1, server2)
+
+
+xxxx <- xx %>% mutate(server11= ifelse(Winner == server1, paste(server1,"(W)"), paste(server1,"(L)")), server22 = ifelse(Winner == server2, paste(server2,"(W)"), paste(server2,"(L)")), together = paste(server11, ";", server22) )
+
+xxx <- gather(xx, Outcome, Name, Winner:Loser)
+xxx <- xxx %>% mutate(Points = ifelse(Outcome == "Winner", 1,0)) %>% select(Date = date, Player1 = server1, Player2 = server2, Name, Points)
+ 
+
+a <- xxx %>% mutate(Name = ifelse(Name == "Albert Ramos-Vinolas" | Name == "Albert Ramos Vinolas", "Albert Ramos-Vinolas", Name))
+b <- a %>% mutate(Name = ifelse(Name == "Dan Evans" | Name == "Daniel Evans", "Dan Evans", Name))
+c <- b %>% mutate(Name = ifelse(Name == "Arthur de Greef" | Name == "Arthur De Greef", "Arthur De Greef", Name))
+d <- c %>% mutate(Name = ifelse(Name == " Diego Sebastian Schwartzman" | Name == "Diego Schwartzman", " Diego Schwartzman", Name))
+e <- d %>% mutate(Name = ifelse(Name == "Arthur de Greef" | Name == "Arthur De Greef", "Arthur De Greef", Name))
+f <- e %>% mutate(Name = ifelse(Name == "Frances Tiafoe" | Name == "Francis Tiafoe", "Francis Tiafoe", Name))
+g <- f %>% mutate(Name = ifelse(Name == "Gregor Dimitrov" | Name == "Grigor Dimitrov", "Grigor Dimitrov", Name))
+h <- g %>% mutate(Name = ifelse(Name == "Ilya Marchenko" | Name == "Illya Marchenko", "Ilya Marchenko", Name))
+i <- h %>% mutate(Name = ifelse(Name == "Paul-Henri Mathieu" | Name == "Paul Henri Mathieu", "Paul Henri Mathieu", Name))
+j <- i %>% mutate(Name = ifelse(Name == "Joao Sousa" | Name == "Joao Souza", "Joao Souza", Name))
+k <- j %>% mutate(Name = ifelse(Name == "Marcus Baghdatis" | Name == "Marcos Baghdatis", "Marcos Baghdatis", Name))
+l <- k %>% mutate(Name = ifelse(Name == "Pablo Carreno-Busta" | Name == "Pablo Carreno Busta", "Pablo Carreno Busta", Name))
+m <- l %>% mutate(Name = ifelse(Name == "Roberto Bautista-Agut" | Name == "Roberto Bautista Agut", "Roberto Bautista Agut", Name))
+n <- m %>% mutate(Name = ifelse(Name == "Stefano Tsitsipas" | Name == "Stefanos Tsitsipas", "Stefanos Tsitsipas", Name))
+o <- n %>% mutate(Name = ifelse(Name == "Thiago Monteiro" | Name == "Thiago Moura Monteiro", "Thiago Monteiro", Name))
+p <- o %>% mutate(Name = ifelse(Name == "Yuki Bhambri" | Name == "Yuki Bhambri", "Yuki Bhambri", Name))
+kable(p %>% group_by(Name) %>%  summarise(GamesPlayed = n(), GamesWon = sum(Points), Percentage = round(sum(Points)/GamesPlayed, 3)) %>% filter(GamesPlayed>=20) %>% arrange(desc(GamesPlayed)))
+
+
+
+
+
+```
+

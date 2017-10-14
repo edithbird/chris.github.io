@@ -9,9 +9,11 @@
 <meta name="generator" content="pandoc" />
 
 
+<meta name="author" content="Christine Iyer" />
 
+<meta name="date" content="2017-10-12" />
 
-<title>Chris’ Website</title>
+<title>Tennis Point by Point</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -30,6 +32,49 @@
 </script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
 
 
 <style type="text/css">
@@ -205,61 +250,28 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Chris’ Website</h1>
+<h1 class="title toc-ignore">Tennis Point by Point</h1>
+<h4 class="author"><em>Christine Iyer</em></h4>
+<h4 class="date"><em>October 12, 2017</em></h4>
 
 </div>
 
 
-<p>This is the index page. You can also call it the home page. I think you’ll feel right at home.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">month_yr</th>
-<th align="right">air.miles</th>
-<th align="right">rail.miles</th>
-<th align="right">car.miles.in.billions</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Jan-90</td>
-<td align="right">35153577</td>
-<td align="right">454115779</td>
-<td align="right">163.2754</td>
-</tr>
-<tr class="even">
-<td align="left">Feb-90</td>
-<td align="right">32965187</td>
-<td align="right">435086002</td>
-<td align="right">153.2544</td>
-</tr>
-<tr class="odd">
-<td align="left">Mar-90</td>
-<td align="right">39993913</td>
-<td align="right">568289732</td>
-<td align="right">178.4176</td>
-</tr>
-<tr class="even">
-<td align="left">Apr-90</td>
-<td align="right">37981886</td>
-<td align="right">568101697</td>
-<td align="right">178.6807</td>
-</tr>
-<tr class="odd">
-<td align="left">May-90</td>
-<td align="right">38419672</td>
-<td align="right">539628385</td>
-<td align="right">188.8762</td>
-</tr>
-<tr class="even">
-<td align="left">Jun-90</td>
-<td align="right">42819023</td>
-<td align="right">570694457</td>
-<td align="right">189.1591</td>
-</tr>
-</tbody>
-</table>
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="40%" style="display: block; margin: auto auto auto 0;" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(knitr)
+<span class="kw">library</span>(dplyr)</code></pre></div>
+<p><a href="https://github.com/JeffSackmann/tennis_pointbypoint/blob/master/README.md">Tennis Point by Point shows data from this github site.</a></p>
+<p>Heres is one csv</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">url1 &lt;-<span class="st"> </span><span class="kw">url</span>(<span class="st">&quot;https://github.com/JeffSackmann/tennis_pointbypoint/blob/master/README.md&quot;</span>)
+x &lt;-<span class="st"> </span><span class="kw">read.csv</span>(url1, <span class="dt">header =</span> T, <span class="dt">stringsAsFactors =</span> F)
+<span class="kw">kable</span>(<span class="kw">head</span>(x))</code></pre></div>
+<div id="x..doctype.html." class="section level2">
+<h2>X..DOCTYPE.html.</h2>
+<html lang=en>
+<head>
+<p><meta charset=utf-8><br />
+<link rel=dns-prefetch href=https://assets-cdn.github.com><br />
+<link rel=dns-prefetch href=https://avatars0.githubusercontent.com> <link rel=dns-prefetch href=https://avatars1.githubusercontent.com></p>
+</div>
 
 
 

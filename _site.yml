@@ -20,6 +20,8 @@ navbar:
       href: electionPage.html
     - text: "Twitter Trends"
       href: Twitter.html
+    - text: "Tennis"  
+      href: Tennis.html
     
       
 output:

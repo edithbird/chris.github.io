@@ -1,0 +1,28 @@
+---
+title: "Tennis Point by Point"
+author: "Christine Iyer"
+date: "October 12, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(knitr)
+library(dplyr)
+```
+
+
+[Tennis Point by Point shows data from this github site.](https://github.com/JeffSackmann/tennis_pointbypoint/blob/master/README.md) 
+
+Heres is one csv
+
+```{r}
+url1 <- url("https://github.com/JeffSackmann/tennis_pointbypoint/blob/master/README.md")
+x <- read.csv(url1, header = T, stringsAsFactors = F)
+kable(head(x))
+```
+

@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Tennis</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107935577-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-107935577-1');
+</script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Chris' Website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">House</a>
+</li>
+<li>
+  <a href="about.html">About Me</a>
+</li>
+<li>
+  <a href="nextPage.html">Score Card</a>
+</li>
+<li>
+  <a href="thirdPage.html">Third Page</a>
+</li>
+<li>
+  <a href="projects.html">Projects</a>
+</li>
+<li>
+  <a href="electionPage.html">Election</a>
+</li>
+<li>
+  <a href="Twitter.html">Twitter Trends</a>
+</li>
+<li>
+  <a href="Tennis.html">Tennis</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Tennis</h1>
+
+</div>
+
+
+<p><a href="https://github.com/JeffSackmann/tennis_pointbypoint/blob/master/README.md">Tennis Point by Point shows data from this github site.</a></p>
+<p>Heres is one csv</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="right">GamesPlayed</th>
+<th align="right">GamesWon</th>
+<th align="right">Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Alexander Zverev</td>
+<td align="right">65</td>
+<td align="right">48</td>
+<td align="right">0.738</td>
+</tr>
+<tr class="even">
+<td align="left">Dominic Thiem</td>
+<td align="right">61</td>
+<td align="right">42</td>
+<td align="right">0.689</td>
+</tr>
+<tr class="odd">
+<td align="left">Rafael Nadal</td>
+<td align="right">57</td>
+<td align="right">48</td>
+<td align="right">0.842</td>
+</tr>
+<tr class="even">
+<td align="left">Roberto Bautista Agut</td>
+<td align="right">56</td>
+<td align="right">41</td>
+<td align="right">0.732</td>
+</tr>
+<tr class="odd">
+<td align="left">Albert Ramos-Vinolas</td>
+<td align="right">52</td>
+<td align="right">27</td>
+<td align="right">0.519</td>
+</tr>
+<tr class="even">
+<td align="left">Benoit Paire</td>
+<td align="right">50</td>
+<td align="right">25</td>
+<td align="right">0.500</td>
+</tr>
+<tr class="odd">
+<td align="left">David Goffin</td>
+<td align="right">50</td>
+<td align="right">35</td>
+<td align="right">0.700</td>
+</tr>
+<tr class="even">
+<td align="left">Gilles Muller</td>
+<td align="right">49</td>
+<td align="right">32</td>
+<td align="right">0.653</td>
+</tr>
+<tr class="odd">
+<td align="left">Tomas Berdych</td>
+<td align="right">48</td>
+<td align="right">31</td>
+<td align="right">0.646</td>
+</tr>
+<tr class="even">
+<td align="left">Grigor Dimitrov</td>
+<td align="right">47</td>
+<td align="right">33</td>
+<td align="right">0.702</td>
+</tr>
+<tr class="odd">
+<td align="left">Joao Souza</td>
+<td align="right">47</td>
+<td align="right">21</td>
+<td align="right">0.447</td>
+</tr>
+<tr class="even">
+<td align="left">John Isner</td>
+<td align="right">47</td>
+<td align="right">30</td>
+<td align="right">0.638</td>
+</tr>
+<tr class="odd">
+<td align="left">Paolo Lorenzi</td>
+<td align="right">46</td>
+<td align="right">23</td>
+<td align="right">0.500</td>
+</tr>
+<tr class="even">
+<td align="left">Robin Haase</td>
+<td align="right">46</td>
+<td align="right">23</td>
+<td align="right">0.500</td>
+</tr>
+<tr class="odd">
+<td align="left">Fabio Fognini</td>
+<td align="right">45</td>
+<td align="right">27</td>
+<td align="right">0.600</td>
+</tr>
+<tr class="even">
+<td align="left">Mischa Zverev</td>
+<td align="right">45</td>
+<td align="right">23</td>
+<td align="right">0.511</td>
+</tr>
+<tr class="odd">
+<td align="left">Diego Schwartzman</td>
+<td align="right">44</td>
+<td align="right">25</td>
+<td align="right">0.568</td>
+</tr>
+<tr class="even">
+<td align="left">Jiri Vesely</td>
+<td align="right">44</td>
+<td align="right">22</td>
+<td align="right">0.500</td>
+</tr>
+<tr class="odd">
+<td align="left">Karen Khachanov</td>
+<td align="right">44</td>
+<td align="right">21</td>
+<td align="right">0.477</td>
+</tr>
+<tr class="even">
+<td align="left">Marin Cilic</td>
+<td align="right">44</td>
+<td align="right">30</td>
+<td align="right">0.682</td>
+</tr>
+<tr class="odd">
+<td align="left">Pablo Carreno Busta</td>
+<td align="right">44</td>
+<td align="right">28</td>
+<td align="right">0.636</td>
+</tr>
+<tr class="even">
+<td align="left">Sam Querrey</td>
+<td align="right">44</td>
+<td align="right">29</td>
+<td align="right">0.659</td>
+</tr>
+<tr class="odd">
+<td align="left">Jack Sock</td>
+<td align="right">43</td>
+<td align="right">29</td>
+<td align="right">0.674</td>
+</tr>
+<tr class="even">
+<td align="left">Kyle Edmund</td>
+<td align="right">43</td>
+<td align="right">21</td>
+<td align="right">0.488</td>
+</tr>
+<tr class="odd">
+<td align="left">Roger Federer</td>
+<td align="right">42</td>
+<td align="right">38</td>
+<td align="right">0.905</td>
+</tr>
+<tr class="even">
+<td align="left">Steve Johnson</td>
+<td align="right">42</td>
+<td align="right">24</td>
+<td align="right">0.571</td>
+</tr>
+<tr class="odd">
+<td align="left">Feliciano Lopez</td>
+<td align="right">40</td>
+<td align="right">24</td>
+<td align="right">0.600</td>
+</tr>
+<tr class="even">
+<td align="left">Fernando Verdasco</td>
+<td align="right">40</td>
+<td align="right">20</td>
+<td align="right">0.500</td>
+</tr>
+<tr class="odd">
+<td align="left">Horacio Zeballos</td>
+<td align="right">40</td>
+<td align="right">19</td>
+<td align="right">0.475</td>
+</tr>
+<tr class="even">
+<td align="left">Lucas Pouille</td>
+<td align="right">40</td>
+<td align="right">26</td>
+<td align="right">0.650</td>
+</tr>
+<tr class="odd">
+<td align="left">Adrian Mannarino</td>
+<td align="right">39</td>
+<td align="right">22</td>
+<td align="right">0.564</td>
+</tr>
+<tr class="even">
+<td align="left">Kevin Anderson</td>
+<td align="right">39</td>
+<td align="right">25</td>
+<td align="right">0.641</td>
+</tr>
+<tr class="odd">
+<td align="left">Philipp Kohlschreiber</td>
+<td align="right">39</td>
+<td align="right">24</td>
+<td align="right">0.615</td>
+</tr>
+<tr class="even">
+<td align="left">Borna Coric</td>
+<td align="right">38</td>
+<td align="right">19</td>
+<td align="right">0.500</td>
+</tr>
+<tr class="odd">
+<td align="left">Jan-Lennard Struff</td>
+<td align="right">38</td>
+<td align="right">18</td>
+<td align="right">0.474</td>
+</tr>
+<tr class="even">
+<td align="left">Kei Nishikori</td>
+<td align="right">38</td>
+<td align="right">26</td>
+<td align="right">0.684</td>
+</tr>
+<tr class="odd">
+<td align="left">Milos Raonic</td>
+<td align="right">38</td>
+<td align="right">27</td>
+<td align="right">0.711</td>
+</tr>
+<tr class="even">
+<td align="left">Nick Kyrgios</td>
+<td align="right">38</td>
+<td align="right">26</td>
+<td align="right">0.684</td>
+</tr>
+<tr class="odd">
+<td align="left">Damir Dzumhur</td>
+<td align="right">37</td>
+<td align="right">21</td>
+<td align="right">0.568</td>
+</tr>
+<tr class="even">
+<td align="left">Nikoloz Basilashvili</td>
+<td align="right">37</td>
+<td align="right">16</td>
+<td align="right">0.432</td>
+</tr>
+<tr class="odd">
+<td align="left">Richard Gasquet</td>
+<td align="right">37</td>
+<td align="right">24</td>
+<td align="right">0.649</td>
+</tr>
+<tr class="even">
+<td align="left">David Ferrer</td>
+<td align="right">36</td>
+<td align="right">18</td>
+<td align="right">0.500</td>
+</tr>
+<tr class="odd">
+<td align="left">Jo-Wilfried Tsonga</td>
+<td align="right">36</td>
+<td align="right">25</td>
+<td align="right">0.694</td>
+</tr>
+<tr class="even">
+<td align="left">Novak Djokovic</td>
+<td align="right">36</td>
+<td align="right">29</td>
+<td align="right">0.806</td>
+</tr>
+<tr class="odd">
+<td align="left">Daniil Medvedev</td>
+<td align="right">35</td>
+<td align="right">19</td>
+<td align="right">0.543</td>
+</tr>
+<tr class="even">
+<td align="left">Donald Young</td>
+<td align="right">35</td>
+<td align="right">18</td>
+<td align="right">0.514</td>
+</tr>
+<tr class="odd">
+<td align="left">Andy Murray</td>
+<td align="right">34</td>
+<td align="right">24</td>
+<td align="right">0.706</td>
+</tr>
+<tr class="even">
+<td align="left">Jared Donaldson</td>
+<td align="right">34</td>
+<td align="right">17</td>
+<td align="right">0.500</td>
+</tr>
+<tr class="odd">
+<td align="left">Pablo Cuevas</td>
+<td align="right">34</td>
+<td align="right">18</td>
+<td align="right">0.529</td>
+</tr>
+<tr class="even">
+<td align="left">Ryan Harrison</td>
+<td align="right">34</td>
+<td align="right">15</td>
+<td align="right">0.441</td>
+</tr>
+<tr class="odd">
+<td align="left">Stan Wawrinka</td>
+<td align="right">34</td>
+<td align="right">23</td>
+<td align="right">0.676</td>
+</tr>
+<tr class="even">
+<td align="left">Gael Monfils</td>
+<td align="right">33</td>
+<td align="right">20</td>
+<td align="right">0.606</td>
+</tr>
+<tr class="odd">
+<td align="left">Carlos Berlocq</td>
+<td align="right">32</td>
+<td align="right">12</td>
+<td align="right">0.375</td>
+</tr>
+<tr class="even">
+<td align="left">Malek Jaziri</td>
+<td align="right">32</td>
+<td align="right">13</td>
+<td align="right">0.406</td>
+</tr>
+<tr class="odd">
+<td align="left">Viktor Troicki</td>
+<td align="right">32</td>
+<td align="right">14</td>
+<td align="right">0.438</td>
+</tr>
+<tr class="even">
+<td align="left">Aljaz Bedene</td>
+<td align="right">31</td>
+<td align="right">16</td>
+<td align="right">0.516</td>
+</tr>
+<tr class="odd">
+<td align="left">Gilles Simon</td>
+<td align="right">31</td>
+<td align="right">12</td>
+<td align="right">0.387</td>
+</tr>
+<tr class="even">
+<td align="left">Thomaz Bellucci</td>
+<td align="right">31</td>
+<td align="right">12</td>
+<td align="right">0.387</td>
+</tr>
+<tr class="odd">
+<td align="left">Andreas Seppi</td>
+<td align="right">30</td>
+<td align="right">16</td>
+<td align="right">0.533</td>
+</tr>
+<tr class="even">
+<td align="left">Andrey Kuznetsov</td>
+<td align="right">30</td>
+<td align="right">11</td>
+<td align="right">0.367</td>
+</tr>
+<tr class="odd">
+<td align="left">Alexandr Dolgopolov</td>
+<td align="right">29</td>
+<td align="right">18</td>
+<td align="right">0.621</td>
+</tr>
+<tr class="even">
+<td align="left">Hyeon Chung</td>
+<td align="right">29</td>
+<td align="right">15</td>
+<td align="right">0.517</td>
+</tr>
+<tr class="odd">
+<td align="left">Ivo Karlovic</td>
+<td align="right">29</td>
+<td align="right">13</td>
+<td align="right">0.448</td>
+</tr>
+<tr class="even">
+<td align="left">Jeremy Chardy</td>
+<td align="right">29</td>
+<td align="right">12</td>
+<td align="right">0.414</td>
+</tr>
+<tr class="odd">
+<td align="left">Thiago Monteiro</td>
+<td align="right">29</td>
+<td align="right">8</td>
+<td align="right">0.276</td>
+</tr>
+<tr class="even">
+<td align="left">Dustin Brown</td>
+<td align="right">28</td>
+<td align="right">10</td>
+<td align="right">0.357</td>
+</tr>
+<tr class="odd">
+<td align="left">Dusan Lajovic</td>
+<td align="right">27</td>
+<td align="right">12</td>
+<td align="right">0.444</td>
+</tr>
+<tr class="even">
+<td align="left">Juan Martin del Potro</td>
+<td align="right">27</td>
+<td align="right">17</td>
+<td align="right">0.630</td>
+</tr>
+<tr class="odd">
+<td align="left">Mikhail Youzhny</td>
+<td align="right">27</td>
+<td align="right">9</td>
+<td align="right">0.333</td>
+</tr>
+<tr class="even">
+<td align="left">Nicolas Mahut</td>
+<td align="right">27</td>
+<td align="right">11</td>
+<td align="right">0.407</td>
+</tr>
+<tr class="odd">
+<td align="left">Rogerio Dutra Silva</td>
+<td align="right">26</td>
+<td align="right">8</td>
+<td align="right">0.308</td>
+</tr>
+<tr class="even">
+<td align="left">Dan Evans</td>
+<td align="right">25</td>
+<td align="right">12</td>
+<td align="right">0.480</td>
+</tr>
+<tr class="odd">
+<td align="left">Bernard Tomic</td>
+<td align="right">24</td>
+<td align="right">9</td>
+<td align="right">0.375</td>
+</tr>
+<tr class="even">
+<td align="left">Radu Albot</td>
+<td align="right">24</td>
+<td align="right">9</td>
+<td align="right">0.375</td>
+</tr>
+<tr class="odd">
+<td align="left">Renzo Olivo</td>
+<td align="right">24</td>
+<td align="right">8</td>
+<td align="right">0.333</td>
+</tr>
+<tr class="even">
+<td align="left">Steve Darcis</td>
+<td align="right">24</td>
+<td align="right">13</td>
+<td align="right">0.542</td>
+</tr>
+<tr class="odd">
+<td align="left">Guido Pella</td>
+<td align="right">23</td>
+<td align="right">10</td>
+<td align="right">0.435</td>
+</tr>
+<tr class="even">
+<td align="left">Jordan Thompson</td>
+<td align="right">23</td>
+<td align="right">10</td>
+<td align="right">0.435</td>
+</tr>
+<tr class="odd">
+<td align="left">Pierre-Hugues Herbert</td>
+<td align="right">23</td>
+<td align="right">8</td>
+<td align="right">0.348</td>
+</tr>
+<tr class="even">
+<td align="left">Denis Istomin</td>
+<td align="right">22</td>
+<td align="right">8</td>
+<td align="right">0.364</td>
+</tr>
+<tr class="odd">
+<td align="left">Dudi Sela</td>
+<td align="right">22</td>
+<td align="right">9</td>
+<td align="right">0.409</td>
+</tr>
+<tr class="even">
+<td align="left">Florian Mayer</td>
+<td align="right">22</td>
+<td align="right">8</td>
+<td align="right">0.364</td>
+</tr>
+<tr class="odd">
+<td align="left">Marcos Baghdatis</td>
+<td align="right">22</td>
+<td align="right">11</td>
+<td align="right">0.500</td>
+</tr>
+<tr class="even">
+<td align="left">Taylor Fritz</td>
+<td align="right">22</td>
+<td align="right">10</td>
+<td align="right">0.455</td>
+</tr>
+<tr class="odd">
+<td align="left">Yuichi Sugita</td>
+<td align="right">22</td>
+<td align="right">12</td>
+<td align="right">0.545</td>
+</tr>
+<tr class="even">
+<td align="left">Martin Klizan</td>
+<td align="right">21</td>
+<td align="right">10</td>
+<td align="right">0.476</td>
+</tr>
+<tr class="odd">
+<td align="left">Mikhail Kukushkin</td>
+<td align="right">20</td>
+<td align="right">9</td>
+<td align="right">0.450</td>
+</tr>
+<tr class="even">
+<td align="left">Nicolas Kicker</td>
+<td align="right">20</td>
+<td align="right">9</td>
+<td align="right">0.450</td>
+</tr>
+<tr class="odd">
+<td align="left">Tommy Haas</td>
+<td align="right">20</td>
+<td align="right">6</td>
+<td align="right">0.300</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

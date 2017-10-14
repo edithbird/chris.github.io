@@ -21,6 +21,7 @@ library(ggplot2)
 library(purrr)
 library(tidyr)
 library(wordcloud)
+library(highcharter)
 ```
 
 
@@ -49,11 +50,16 @@ colors <- c("#A7A7A7",
 
 ```{r, message=FALSE, warning=FALSE}
 retweetOverTime <- userTimeline('@realDonaldTrump', n = num_tweets)
+
 retweets_df <- twListToDF(retweetOverTime)
+
 retweets_df$created <- as.Date(retweets_df$created, format = "%m-%d-%Y")
+
 summarisedReTweets <- retweets_df %>% group_by(created) %>% summarise(n = n(), sumRetweets = sum(retweetCount)) %>% rename(Date = created)
+
 ggplot(summarisedReTweets, aes(x = Date, y = n, size = sumRetweets, color = sumRetweets)) + geom_point() + theme_bw() + 
 scale_size(range = c(1,25)) + theme(legend.position="none")
+
 ggplot(summarisedReTweets, aes(x = Date, y = sumRetweets)) + geom_line()+theme_bw()
 ```
 
@@ -80,4 +86,10 @@ nrc <- sentiments %>% filter( lexicon == "nrc") %>% select(word, sentiment)
 tweet_words %>% count(word) %>% arrange(n) %>% with(wordcloud(word, n, max.words = 100, scale=c(5,.5),min.freq=5, random.order=FALSE, rot.per=.15, colors=brewer.pal(9,"Blues")))
 ```
 
+```{r}
+x <- searchTwitter("25thAmendment")
+x
+retweets_df <- twListToDF(x)
+retweets_df %>% select(text, retweetCount)
+```
 
