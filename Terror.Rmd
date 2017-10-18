@@ -1,0 +1,7 @@
+
+---
+title: "Terror"
+---
+
+```{r, child="_sessionTerror.Rmd"}
+```

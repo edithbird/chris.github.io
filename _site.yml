@@ -22,6 +22,8 @@ navbar:
       href: Twitter.html
     - text: "Tennis"  
       href: Tennis.html
+    - text: "Terrorism"
+      href: Terror.html
     
       
 output:

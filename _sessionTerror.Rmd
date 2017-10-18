@@ -1,0 +1,42 @@
+---
+title: "Terror Point by Point"
+author: "Christine Iyer"
+date: "October 12, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+
+```{r}
+library(knitr)
+library(dplyr)
+library(tidyr)
+library(data.table)
+library(zoo)
+library(ggplot2)
+library(forecast)
+```
+
+```{r, fig.height=8, fig.width=10}
+terror <- read.csv("TerrorAttacks.csv", header = T, stringsAsFactors = F)
+
+terror <- terror %>% mutate(Date = paste0(Year,"-",Month,"-",Day)) 
+terror$Date <- as.POSIXct(terror$Date, format = "%Y-%m-%d")
+
+terror1 <- terror %>% group_by(Year, Date) %>% summarise(NumberOfAttacks = n(), Casualities = sum(Killed))
+
+ggplot(terror1, aes(x = Date, y = NumberOfAttacks, group = factor(Year), color = factor(Year))) + geom_smooth() + theme_bw()
+
+terror.ts <- ts(terror1$NumberOfAttacks, start = c(2013,1,1),frequency=365.25)
+
+ggseasonplot(terror.ts, ylab = "Number of Attacks)", main = "Number of Terror Attacks", lwd = 2)
+```
+
+
