@@ -1,7 +1,6 @@
 ---
-title: "Terror Point by Point"
-author: "Christine Iyer"
-date: "October 12, 2017"
+title: "Terrorist Attacks by Year"
+
 output: html_document
 ---
 
@@ -32,11 +31,14 @@ terror$Date <- as.POSIXct(terror$Date, format = "%Y-%m-%d")
 
 terror1 <- terror %>% group_by(Year, Date) %>% summarise(NumberOfAttacks = n(), Casualities = sum(Killed))
 
-ggplot(terror1, aes(x = Date, y = NumberOfAttacks, group = factor(Year), color = factor(Year))) + geom_smooth() + theme_bw()
+ggplot(terror1, aes(x = Date, y = NumberOfAttacks, group = factor(Year), color = factor(Year))) + geom_smooth(aes(size = 0.5),se = FALSE) + theme_bw()  + theme(legend.position="none")
 
 terror.ts <- ts(terror1$NumberOfAttacks, start = c(2013,1,1),frequency=365.25)
 
-ggseasonplot(terror.ts, ylab = "Number of Attacks)", main = "Number of Terror Attacks", lwd = 2)
+
 ```
 
+```{r}
+#ggseasonplot(terror.ts, ylab = "Number of Attacks)", main = "Number of Terror Attacks", lwd = 2)
+```
 
